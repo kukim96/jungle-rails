@@ -51,5 +51,19 @@ RSpec.describe User, type: :model do
       expect(subject).to_not be_valid
       expect(subject.errors.full_messages). to include "Password confirmation can't be blank"
     end
+
+    it "is not valid when password is shorter than 8 characters" do
+      subject.password = "1234567"
+      subject.password_confirmation = "1234567"
+      expect(subject).to_not be_valid
+      expect(subject.errors.full_messages).to include "Password is too short (minimum is 8 characters)"
+    end
+
+    it "is valid when password is exactly 8 characters" do
+      subject.password = "12345678"
+      subject.password_confirmation = "12345678"
+      expect(subject).to be_valid
+      expect(subject.errors.full_messages).to be_empty
+    end
   end
 end
