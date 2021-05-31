@@ -85,5 +85,17 @@ RSpec.describe User, type: :model do
       auth = User.authenticate_with_credentials(subject.email, "supersecrett")
       expect(auth).to eq nil
     end
+
+    it "authenticates when email is correct but has whitespaces surrounding it" do
+      subject.save!
+      auth = User.authenticate_with_credentials("   " + subject.email + "   ", subject.password)
+      expect(auth).to eq subject
+    end
+
+    it "authenticates when email is correct but has wrong case" do
+      subject.save!
+      auth = User.authenticate_with_credentials("KUKIM96@GMAIL.COm", subject.password)
+      expect(auth).to eq subject
+    end
   end
 end
