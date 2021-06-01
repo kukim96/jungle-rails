@@ -1,6 +1,11 @@
 # Jungle
+Are you looking for a ecommerce application that sells the most unique products on the web?
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+Look no further and checkout Jungle!
+
+A mini e-commerce application built with Rails 4.2 that was built to learn Ruby on Rails.
+
+## Screen shots
 
 ## Additional Steps for Apple M1 Machines
 
@@ -31,3 +36,8 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
 * Stripe
+
+## Testing
+
+* Unit testing: RSpec
+* Integration testing: Capybara, Poltergeist
